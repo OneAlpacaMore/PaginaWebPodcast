@@ -1,0 +1,11 @@
+@use 'base/mixins' as m;
+
+.crear-grid {
+    text-align: center;
+
+    @include m.tablet {
+        text-align: left;
+        @include m.grid(2, 2rem);
+        align-items: center;
+    }
+}
