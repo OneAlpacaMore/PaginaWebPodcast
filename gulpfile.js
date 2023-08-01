@@ -12,8 +12,12 @@ const imagemin = require('gulp-imagemin');
 const webp = require('gulp-webp');
 const avif = require('gulp-avif');
 
+//plumber 
+const plumber = require('gulp-plumber');
+
 function css( done ) {
     src('src/scss/app.scss')
+        .pipe(plumber())
         .pipe( sourcemaps.init() )
         .pipe( sass() )
         .pipe( postcss([ autoprefixer(), cssnano() ]) )
