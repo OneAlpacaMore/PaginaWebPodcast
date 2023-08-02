@@ -1,4 +1,4 @@
-@use 'variables' as v; 
+@use 'variables' as v;
 
 /** Media Queries **/
 @mixin telefono {
@@ -12,7 +12,7 @@
         @content;
     }
 }
-  
+
 @mixin desktop {
     @media (min-width: v.$desktop) {
         @content;
@@ -41,7 +41,7 @@
     @include tablet {
         width: auto;
         display: inline-block;
-        
+
     }
 }
 
@@ -56,4 +56,24 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top center;
+}
+
+@mixin headingBorder ($colorTexto, $colorLinea) {
+    font-size: 3.6rem;
+    display: inline-block;
+    margin-top: 5rem;
+    color: $colorTexto;
+
+    @include tablet {
+        margin-top: 0;
+    }
+
+    &::after {
+        content: '';
+        background-color: $colorLinea;
+        height: 1rem;
+        width: calc(100% + 1rem);
+        display: block;
+        margin: -1rem 0 0 0;
+    }
 }
