@@ -4,12 +4,21 @@
 .planes {
     background-color: v.$secundario;
 
-    h2 {
-        @include m.headingBorder(v.$blanco, v.$primario);
-    }
+   
 
     .descripcion {
         color: v.$blanco;
+    }
+
+    .contenedor {
+        text-align: center;
+        @include m.tablet { 
+            text-align: left;
+         }
+        h2 {
+        
+            @include m.headingBorder(v.$blanco, v.$primario);
+        }
     }
 }
 
@@ -17,6 +26,7 @@
 
     display: flex;
     flex-direction: column;
+
     @include m.tablet {
         flex-direction: row;
         max-width: 80rem;
@@ -29,14 +39,16 @@
         flex-grow: 1;
         padding: 16rem 4rem 4rem 4rem;
         border-bottom: 1px solid #e1e1e1;
-        @include m.tablet { 
+
+        @include m.tablet {
             border: none;
             transition-property: transform;
             transition-duration: 300ms;
+
             &:hover {
                 transform: scale(1.1);
             }
-         }
+        }
 
         .precio {
             font-size: 1.8rem;

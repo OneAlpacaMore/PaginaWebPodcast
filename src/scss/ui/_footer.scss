@@ -4,11 +4,26 @@
 .footer {
     background-color: v.$secundario;
     color: v.$blanco;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    h3 {
+        display: unset;
+    }
+
+    @include m.tablet { 
+        text-align: left;
+
+     }
+
     .footer-grid {
         padding: 5rem 0;
         @include m.tablet {
             @include m.grid(4, 4rem);
         }
+  
     }
 
     .logo {
@@ -50,8 +65,8 @@
         color: v.$blanco;
         margin: 0 auto;
         padding: 1rem;
-        max-width: 120rem;
-        border-top: 2px solid v.$primario;
+        width: 100%;
+        border-top: 1px solid v.$primario;
         font-size: 1.2rem;
         text-transform: uppercase;
     }
